@@ -20,7 +20,7 @@ const newsSlice = createSlice({
       state.personalizeFeed = action.payload;
     },
     favourite: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.favourite = action.payload;
     },
   },

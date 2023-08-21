@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 export default function FullNews() {
   const { data } = useParams();
-  console.log(data);
+  //   console.log(data);
 
   return data ? (
     <div id="main">

@@ -23,7 +23,7 @@ export default function FavouriteNews() {
 
   useEffect(() => {
     getfav();
-    console.log(news);
+    // console.log(news);
   }, []);
 
   // const handleSend = async (data) => {
@@ -43,7 +43,7 @@ export default function FavouriteNews() {
   // }, [isInitialCat]);
 
   const newsdata = useSelector((store) => store.news.favourite);
-  console.log(news);
+  // console.log(news);
   return (
     <div id="main">
       <section className="section recent" aria-label="recent post">

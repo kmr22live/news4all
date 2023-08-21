@@ -2,6 +2,15 @@ import React, { useState, useEffect } from "react";
 import PersonalizeButton from "../PersonalizeButton";
 import { useDispatch } from "react-redux";
 import { feedChange } from "../../store/NewsSlice";
+import {
+  arrayUnion,
+  doc,
+  serverTimestamp,
+  Timestamp,
+  updateDoc,
+} from "firebase/firestore";
+import { db } from "../../services/Auth/Auth";
+import { v4 } from "uuid";
 import NewsDataSection from "../NewsDataSection";
 
 export default function Newsdata() {
@@ -62,9 +71,9 @@ export default function Newsdata() {
     }
   }
 
-  useEffect(() => {
-    getNewsApi(isInitialCat);
-  }, [isInitialCat]);
+  // useEffect(() => {
+  //   getNewsApi(isInitialCat);
+  // }, [isInitialCat]);
 
   const dispatch = useDispatch();
 
@@ -512,8 +521,8 @@ export default function Newsdata() {
         </div>
         <ul className={listActive ? "list-view" : "grid-list"}>
           {/* grid-list */}
-          {newsApiData &&
-            newsApiData?.articles?.slice(0, sliceLength).map((data, i) => {
+          {news &&
+            news?.articles?.slice(0, sliceLength).map((data, i) => {
               return <NewsDataSection key={"blogcard" + i} data={data} />;
             })}
         </ul>

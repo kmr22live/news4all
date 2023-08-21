@@ -23,7 +23,7 @@ function SignIn() {
   useEffect(() => {
     if (authlogin) {
       nav("/home");
-      console.log("login mohan eeee");
+      // console.log("login mohan eeee");
     }
   }, [authlogin]);
 
@@ -70,7 +70,7 @@ function SignIn() {
   const handleErrorReg = () => {
     let errors = initialStateErrorsReg;
     let hasError = false;
-    console.log(inputsReg);
+    // console.log(inputsReg);
     if (inputsReg.name === "") {
       errors.name.required = true;
       hasError = true;
@@ -94,7 +94,7 @@ function SignIn() {
       //   sending register api request
       createUserWithEmailAndPassword(auth, inputsReg.email, inputsReg.password)
         .then((res) => {
-          console.log(res.user.uid);
+          // console.log(res.user.uid);
           storeUserData(res.user.uid);
           dispatch(login());
         })
@@ -124,14 +124,14 @@ function SignIn() {
           setLoadingReg(false);
         });
     }
-    console.log(initialStateErrors, errors);
+    // console.log(initialStateErrors, errors);
     setErrorsReg(errors);
   };
 
   const handleError = () => {
     let errors = initialStateErrors;
     let hasError = false;
-    console.log(inputs);
+    // console.log(inputs);
 
     if (
       inputs.email === "" ||
@@ -152,7 +152,7 @@ function SignIn() {
       //   sending register api request
       signInWithEmailAndPassword(auth, inputs.email, inputs.password)
         .then((res) => {
-          console.log(res.user.uid);
+          // console.log(res.user.uid);
           storeUserData(res.user.uid);
           dispatch(login());
         })
@@ -171,14 +171,14 @@ function SignIn() {
               custom_error_status: true,
             });
           }
-          console.log(err.code);
+          // console.log(err.code);
           //   setErrors({ ...errors, custom_error: true });
         })
         .finally(() => {
           setLoading(false);
         });
     }
-    console.log(initialStateErrors, errors);
+    // console.log(initialStateErrors, errors);
     setErrors(errors);
   };
 
